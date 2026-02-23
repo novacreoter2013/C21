@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Mini Project</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #667eea, #764ba2);
+            color: white;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .container {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 20px auto;
+            width: 80%;
+            backdrop-filter: blur(10px);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            background: #ffffff;
+            color: #333;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: #ffd700;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🚀 JavaScript Practice Project</h1>
+
+    <!-- STRING METHODS -->
+    <div class="container">
+        <h2>1️⃣ JavaScript String Methods</h2>
+        <p id="stringDemo"></p>
+        <button onclick="showStringMethods()">Show String Methods</button>
+    </div>
+
+    <!-- LOOPING -->
+    <div class="container">
+        <h2>2️⃣ JavaScript Looping</h2>
+        <p id="loopDemo"></p>
+        <button onclick="showFruits()">Show Fruits</button>
+    </div>
+
+    <!-- SWITCH CASE -->
+    <div class="container">
+        <h2>3️⃣ JavaScript Switch Case</h2>
+        <p id="dayDemo"></p>
+        <button onclick="showDay()">Show Today</button>
+    </div>
+
+<script>
+
+function showStringMethods() {
+
+    var str = "AmAzInG";
+    var str1 = "I Learned About Methods";
+    var patt = new RegExp("About", "i");
+
+    var result = `
+        Original: ${str} <br>
+        Uppercase: ${str.toUpperCase()} <br>
+        Lowercase: ${str.toLowerCase()} <br>
+        Starts with 'A': ${str.startsWith("A")} <br><br>
+        Regex Test ("About"): ${patt.test(str1)}
+    `;
+
+    document.getElementById("stringDemo").innerHTML = result;
+}
+
+function showFruits() {
+
+    var fruits = ["Apple", "Banana", "Mango", "Orange", "Grapes", "Watermelon", "Pineapple"];
+    var text = "";
+
+    for (var i = 0; i < fruits.length; i++) {
+        text += fruits[i] + "<br>";
+    }
+
+    document.getElementById("loopDemo").innerHTML = text;
+}
+
+function showDay() {
+
+    var day;
+    switch (new Date().getDay()) {
+        case 0: day = "Sunday"; break;
+        case 1: day = "Monday"; break;
+        case 2: day = "Tuesday"; break;
+        case 3: day = "Wednesday"; break;
+        case 4: day = "Thursday"; break;
+        case 5: day = "Friday"; break;
+        case 6: day = "Saturday"; break;
+        default: day = "Unknown";
+    }
+
+    document.getElementById("dayDemo").innerHTML = "Today is " + day;
+}
+
+</script>
+
+</body>
+</html>
